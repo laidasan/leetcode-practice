@@ -21,7 +21,6 @@ function combinArray(ar1,ar2) {
         combinary.push(ar1[i] + ar2[j])
         j++
         if(j >= ar2.length){
-            console.log('i++')
             j = 0
             i++;
         }
@@ -35,9 +34,7 @@ function letterCombinations(digits) {
     let possibleCombinations = []
     let inputs = Array.from(digits)
     let willBeCombined = inputs.map(input => phoneABC[input])
-    possibleCombinations = willBeCombined.reduce((ary1,ary2) => {
-        return combinArray(ary1,ary2)
-    }) 
+    possibleCombinations = willBeCombined.reduce((ary1,ary2) => combinArray(ary1,ary2)) 
     return possibleCombinations
 };
 console.log(letterCombinations(input))
