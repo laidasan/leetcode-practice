@@ -11,7 +11,6 @@
 // test時沒有全隊 對了 50%
 // 下面是在次更改過的(但沒有確定)
 
-
 function solutioin(A,K) {
     for(let i = 0 ; i < A.length - 1;i++) {
         if(A[i] + 1 < A[i] + 1) return false
