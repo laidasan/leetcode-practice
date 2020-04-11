@@ -54,7 +54,7 @@ function longestCommonPrefix(strs) {
             reg = new RegExp(`^(${firstStr.substring(0,end)})`)
         }
     }
-    
+
     return str
 }
 console.log(longestCommonPrefix(["flower","flow","flight"]))
@@ -113,4 +113,4 @@ console.log(longestCommonPrefix(["flower","flow","flight"]))
     
 
 //     console.log(logestCommonPrefix(commons));
-})();
+// })();
