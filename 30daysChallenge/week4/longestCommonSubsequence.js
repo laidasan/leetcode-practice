@@ -58,24 +58,24 @@ let text2 = 'abcde'
 // ● 從最右下角開始 , 往 上 or 左 or 左上
 // ● 若 [i - 1][j - 1] + 1 = [i][j] , 則該位置為 common longest subquence 其中之一 , 且往左上走 , 否則
 // ● 否則往 max( [i][j - 1] , [i - 1][j]) (較大的方向)走
-function longestCommonSubsequence(text1,text2) {
+function longestCommonSubsequence(text1, text2) {
     let rows = text1.split('').map(ch => [0])
     rows.unshift(text2.split('').map(ch => 0))
     rows[0].push(0)
 
-    for(let i = 1 ; i <= text1.length ; i++) {
-        for(let j = 1 ; j <= text2.length ; j++) {
-            if(text1[i - 1] === text2[j - 1]) {
+    for (let i = 1; i <= text1.length; i++) {
+        for (let j = 1; j <= text2.length; j++) {
+            if (text1[i - 1] === text2[j - 1]) {
                 rows[i][j] = rows[i - 1][j - 1] + 1
-            }else {
+            } else {
                 rows[i][j] = rows[i][j - 1] > rows[i - 1][j] ? rows[i][j - 1] : rows[i - 1][j]
             }
         }
     }
 
     return rows[text1.length][text2.length]
-} 
-console.log(longestCommonSubsequence(text1,text2))
+}
+console.log(longestCommonSubsequence(text1, text2))
 
 
 
@@ -184,7 +184,7 @@ console.log(longestCommonSubsequence(text1,text2))
 // function lonSub(ary) {
 
 //     let lengthAry = ary.map(ele => 1) , longest = 1
-    
+
 //     for (let i = 0; i < ary.length; i++) {
 //         for (let j = i + 1; j < ary.length; j++) {
 //             if (ary[j] > ary[i]) {
@@ -192,11 +192,13 @@ console.log(longestCommonSubsequence(text1,text2))
 //             }
 //         }
 //     }
-    
+
 //     longest = lengthAry.reduce((pre, thisnm) => pre > thisnm ? pre : thisnm)
 //     return longest
 // }
 // // let test = [4,15,17,9,6,8,11,5,1,7,3,19,0,2,10]
 // let test = [4,15,9,6,7,8,10,11,5,1,2,3,17,19,0]
 // console.log(lonSub(test))
+
+
 
